@@ -18,6 +18,7 @@
 
 Az adatbázis az alábbi adatokat tárolja: 
 - felhasználó(név, azonosító, jelszó)
-- cikkek (cím, szerző, dátum, összefoglaló, tartalom, vezető cikk-e)
+- authors(nev, azonosito, jelszo)
+- cikkek (cím, author.azonosito, dátum, összefoglaló, tartalom, vezető cikk-e)
 - Thumbnailkep (cikk azonosító, kép)
 - Kommentek (cikk azonosito, felhasznalonev, tartalom)
