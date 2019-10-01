@@ -1,4 +1,5 @@
 # 666 Hírportál
+(Vass Mark Benjamin - I8WZ8L, Garai Adam - G21IQ5)
 - A  főoldalon  megjelennek  a  legfrissebb  hírek  (cím és  összefoglaló,dátum szerint csökkenő sorrendben, legfeljebb 10), illetve a lap tetején kiemelten a vezető cikk (cím és összefoglaló) képpel (amennyiben több kép tartozik a cikkhez, az első jelenik meg, kicsinyített méretben).
 
 - A címet kiválasztva megjelenik  a  teljes  tartalom(beleértve a szerző nevét, illetve a bevitel, vagy utolsó módosítás dátumát)képpel (ha van kép a cikkhez rendelve).
