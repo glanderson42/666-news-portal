@@ -7,46 +7,49 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
+@AllArgsConstructor
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer articleId;
+    private Integer id;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    private Author author;
+
+    @Column
     @NotNull
     private String title;
 
-    //@OneToOne(mappedBy = "authorId")
-    //private Integer author;
-
-    @Column(nullable = false)
+    @Column
     @NotNull
-    private String conclusion;
-
-    @Column(nullable = false)
-    @NotNull
-    @Size(max = 1000)
     private String content;
 
-    @Column(nullable = false)
+    @Column
+    @NotNull
+    private String summary;
+
+    @Column
+    @NotNull
+    private Boolean isLeadingArticle;
+
+    @Column(updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
-    
-    @Column(nullable = false)
-    @NotNull
-    private Boolean isDriverArticle;
 }

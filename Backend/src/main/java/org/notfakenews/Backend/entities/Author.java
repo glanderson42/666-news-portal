@@ -1,46 +1,51 @@
-/*
 package org.notfakenews.Backend.entities;
 
-import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
 public class Author {
-    @OneToOne
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer authorId;
+    private Integer id;
 
-    @Column(nullable = false)
+    @Column
     @NotNull
     private String username;
 
-    @Column(nullable = false)
+    @Column
     @NotNull
     private String password;
+    
+    @OneToMany(mappedBy = "author")
+    @JsonIgnore
+    private List<Article> articles;
 
-    @Column(nullable = false)
-    @CreationTimestamp
-    private LocalDate createdAt;
+    public String getUsername() {
+		return this.username;
+    }
 
-    public Author(String uname, String passwd) {
-        this.username = uname;
-        this.password = new BCryptPasswordEncoder().encode(passwd);
+    public String getPassword() {
+        return this.password;
+    }
+
+	public void setId(Integer id2) {
+        this.id = id2;
     }
 }
-*/
