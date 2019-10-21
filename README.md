@@ -22,19 +22,48 @@ Az adatbázis az alábbi adatokat tárolja:
 - authors(nev, azonosito, jelszo)
 - cikkek (cím, author.azonosito, dátum, összefoglaló, tartalom, vezető cikk-e)
 
-## 1. Vegpontok leirasa
-GET /api/thumbnails/ -> visszaadja az osszem thumbnail
-POST /api/thumbnails/ -> json formaban betudunk rakni egy thumbnailt az adatbazisba
+## 1. Hasznalt technologia:
+Spring boot, JPA, Hibernate, Boot-Security
 
-GET /api/users/ -> visszaadja az osszes usert
-POST /api/users/login -> bejelentkezteti a usert
-POST /api/users/register -> user registralasa
-GET /api/users/{id} -> visszaadja az id-vel rendelkezo usert
-DELETE /api/users/{id} -> kitorli az adott id-vel rendelkezo usert
-PUT /api/users/{id} -> updateli az adott id-vel rendelkezo usert
+## 2. Vegpontok leirasa
+- GET /api/thumbnails/ -> visszaadja az osszem thumbnail
+- POST /api/thumbnails/ -> json formaban betudunk rakni egy thumbnailt az adatbazisba
 
-GET /api/article/ -> visszaadja az osszes cikket
-GET /api/article/{id} -> visszaadja az adott id-vel rendelkezo cikket
-POST /api/article/ -> hozzaad egy cikket
-PUT /api/article/{id} -> updateli az adott id-vel rendelkezo usert
-DELETE /api/article/{id} -> torli az adott id-vel rendelkezo usert
+- GET /api/users/ -> visszaadja az osszes usert
+- POST /api/users/login -> bejelentkezteti a usert
+- POST /api/users/register -> user registralasa
+- GET /api/users/{id} -> visszaadja az id-vel rendelkezo usert
+- DELETE /api/users/{id} -> kitorli az adott id-vel rendelkezo usert
+- PUT /api/users/{id} -> updateli az adott id-vel rendelkezo usert
+
+- GET /api/article/ -> visszaadja az osszes cikket
+- GET /api/article/{id} -> visszaadja az adott id-vel rendelkezo cikket
+- POST /api/article/ -> hozzaad egy cikket
+- PUT /api/article/{id} -> updateli az adott id-vel rendelkezo usert
+- DELETE /api/article/{id} -> torli az adott id-vel rendelkezo usert
+
+## 3.Egy vegpont leirasa
+![endpoint](https://scontent-vie1-1.xx.fbcdn.net/v/t1.15752-9/73523635_2664454326927204_2294173183638503424_n.jpg?_nc_cat=108&_nc_oc=AQkNAtrItGP6ZAEuT9MVEm3XX0DUivgeC84avnu0CoJfXI9LZzYNdAFwZDTIHv_VWZghXSx2qSTExdAlPSUIp7Dz&_nc_ht=scontent-vie1-1.xx&oh=81e2818ef7ab9a9d356509b042b98e63&oe=5E629FAE)
+
+## 4. Konyvtarstruktura
+```
+666-news-portal
+└───Backend
+    └───src
+        ├───main
+        │   ├───java
+        │   │   └───org
+        │   │       └───notfakenews
+        │   │           └───Backend
+        │   │               ├───controllers
+        │   │               ├───entities
+        │   │               ├───repositories
+        │   │               └───security
+        │   └───resources
+        └───test
+            └───java
+                └───org
+                    └───notfakenews
+                        └───Backend
+  
+```
