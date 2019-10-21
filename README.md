@@ -58,7 +58,6 @@ Spring boot, JPA, Hibernate, Boot-Security
         │   │               ├───controllers
         │   │               ├───entities
         │   │               ├───repositories
-        │   │               └───security
         │   └───resources
         └───test
             └───java
