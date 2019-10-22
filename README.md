@@ -18,9 +18,9 @@
 - Cikk törlésénél a program megerősítést kér a felhasználótól.
 
 Az adatbázis az alábbi adatokat tárolja: 
-- felhasználó(név, azonosító, jelszó)
-- authors(nev, azonosito, jelszo)
-- cikkek (cím, author.azonosito, dátum, összefoglaló, tartalom, vezető cikk-e)
+- User(id, username, password, firstName, lastName, lastLogin, role, articles)
+- Thumbnail(id, url, article)
+- Article(id, name, user, postDate, modifiedDate, summary, content)
 
 ## 1. Hasznalt technologia:
 Spring boot, JPA, Hibernate, Boot-Security
@@ -58,6 +58,7 @@ Spring boot, JPA, Hibernate, Boot-Security
         │   │               ├───controllers
         │   │               ├───entities
         │   │               ├───repositories
+        |   |               └───services
         │   └───resources
         └───test
             └───java
@@ -66,3 +67,8 @@ Spring boot, JPA, Hibernate, Boot-Security
                         └───Backend
   
 ```
+## 5. DBDiagram
+![db](https://scontent-vie1-1.xx.fbcdn.net/v/t1.15752-9/74607741_955582444801013_7555021896580857856_n.png?_nc_cat=110&_nc_oc=AQljkGkEhgLRRT2efPYLJPb6DHQGGo2GEkE4lK8TmvBIIApU-d3Cay8MiPUTAIqllcvWHOGZWNz70iUFpFhIRZGF&_nc_ht=scontent-vie1-1.xx&oh=873af3ac9f637b93f61f42f88ba6b662&oe=5E18CD7E)
+
+## 6. Usercase diagram
+![usercase](https://scontent-vie1-1.xx.fbcdn.net/v/t1.15752-9/74325794_954705488239525_4852537308961832960_n.png?_nc_cat=107&_nc_oc=AQlyZQ59KJ8bDkL4x9YFy8dnoBVv8zjVcONLY-QAFjI8rAv4gI2c_E2e9JS_ud7qFNoKs_HA2F60jRxI28X4OzM6&_nc_ht=scontent-vie1-1.xx&oh=dfbc72d6379956441bef53a5edd66d0f&oe=5E569A33)
