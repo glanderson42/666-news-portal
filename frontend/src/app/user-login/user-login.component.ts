@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -8,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(
 
+  constructor(
+    private fb: FormBuilder
   ) { }
+
+  loginForm = this.fb.group({
+    username: ['']
+  });
+
 
   ngOnInit() {
 
+  }
+
+  get username() {
+    return this.loginForm.get('username');
   }
 }
