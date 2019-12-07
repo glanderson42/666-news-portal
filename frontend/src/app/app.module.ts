@@ -22,7 +22,7 @@ import { ArticleCreateComponent } from './article-create/article-create.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

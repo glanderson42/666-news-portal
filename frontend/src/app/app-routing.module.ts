@@ -5,6 +5,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserLoginComponent } from './user-login/user-login.component';
 import { IndexComponent } from './index/index.component';
 import { ArticleViewComponent } from './article-view/article-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   {
@@ -30,7 +32,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
