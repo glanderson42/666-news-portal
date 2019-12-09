@@ -6,6 +6,7 @@ import org.notfakenews.Backend.entities.Article;
 import org.notfakenews.Backend.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/article")
+@RequestMapping("/api/articles")
+@CrossOrigin
 public class ArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;

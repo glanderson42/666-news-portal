@@ -1,0 +1,17 @@
+<h2>Articles</h2>
+
+<mat-grid-list cols="2" rowHeight="180">
+  <mat-grid-tile *ngFor="let article of articles">
+    <mat-card>
+      <mat-card-title>
+        {{ article.id }}
+        {{ article.name}}
+        {{ article.user}}
+        {{ article.postDate}}
+        {{ article.modifiedDate}}
+        {{ article.summary}}
+        {{ article.content}}
+      </mat-card-title>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
