@@ -1,0 +1,59 @@
+<div class="page-body">
+  <h2 class="mat-h2">New Article</h2>
+  <form [formGroup]="articleForm" novalidate>
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" formControlName="name" />
+        <mat-error *ngIf="name.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input disabled matInput/>
+        {{userName}}
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="PostDate" formControlName="postDate" />
+        <mat-error *ngIf="postDate.hasError('required')">
+          PostDate is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ModifiedDate" formControlName="modifiedDate" />
+        <mat-error *ngIf="modifiedDate.hasError('required')">
+          ModifiedDate is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Summary" formControlName="summary" />
+        <mat-error *ngIf="summary.hasError('required')">
+          Summary is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Content" formControlName="content" />
+        <mat-error *ngIf="content.hasError('required')">
+          Content is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button class="mat-primary" (click)="submit()" [disabled]="!articleForm.valid">Send</button>
+    <a mat-button class="mat-accent" routerLink="">Back</a>
+    </form>
+</div>

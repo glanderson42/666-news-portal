@@ -12,13 +12,15 @@ import { MatToolbarModule, MatButtonModule, MatCardModule, MatGridListModule, Ma
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { IndexComponent } from './pages/index/index.component';
 import { UsersComponent } from './pages/users/users.component';
+import { CreateArticleComponent } from './pages/create-article/create-article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     IndexComponent,
-    UsersComponent
+    UsersComponent,
+    CreateArticleComponent
   ],
   imports: [
     BrowserModule,

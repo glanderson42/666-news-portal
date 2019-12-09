@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/articles")
 public class ArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
 
-	@GetMapping("/")
+	@GetMapping("")
 	public ResponseEntity<Iterable<Article>> getAll() {
 		return ResponseEntity.ok(articleRepository.findAll());
 	}
@@ -38,7 +38,7 @@ public class ArticleController {
 		return ResponseEntity.notFound().build();
 	}
 
-	@PostMapping("/")
+	@PostMapping("")
 	public ResponseEntity<Article> post(@RequestBody Article article) {
 		Article savedArticle = articleRepository.save(article);
 		return ResponseEntity.ok(savedArticle);

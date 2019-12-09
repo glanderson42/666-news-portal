@@ -20,8 +20,8 @@ export class HttpService {
 
     return {
       headers: new HttpHeaders(headers)
-    }
-  };
+    };
+  }
 
   private URL = 'http://localhost:8080/api/';
 
