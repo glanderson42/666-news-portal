@@ -6,11 +6,15 @@ import { Article } from '../models/Article';
   providedIn: 'root'
 })
 export class ArticleService {
-  private route: string = 'article';
+  private route = 'articles';
 
   constructor(private httpService: HttpService) {}
 
   public getArticles(): Promise<Article[]> {
     return this.httpService.get<Article[]>(this.route);
+  }
+
+  public getArticle(id: Article): Promise<Article[]> {
+    return this.httpService.get<Article[]>(this.route + '/' + id);
   }
 }

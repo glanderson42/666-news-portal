@@ -1,0 +1,15 @@
+<h2>Users</h2>
+
+<mat-grid-list cols="2" rowHeight="180">
+  <mat-grid-tile *ngFor="let user of users">
+    <mat-card>
+      <mat-card-title>
+        {{ user.id }}
+        {{ user.username}}
+        {{ user.firstName}}
+        {{ user.lastName}}
+        {{ user.role}}
+      </mat-card-title>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule, MatButtonModule, MatCardModule, MatGridListModule, MatListModule, MatTableModule, MatSelectModule, MatFormFieldModule, MatDatepickerModule, MatInputModule, MatNativeDateModule, MatIconModule } from '@angular/material';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { IndexComponent } from './pages/index/index.component';
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    IndexComponent
+    IndexComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
