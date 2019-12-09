@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <span>666 Zsindex&trade;</span>
+  <button mat-button routerLink="">Index</button>
+  <button mat-button routerLink="createArticle">Create Article</button>
+  <button mat-button routerLink="users">List users</button>
+
+  <div class="spacer">
+  </div>
+
+  <div *ngIf="!authService.isLoggedIn">
+    <button mat-button routerLink="/login">Login</button>
+  </div>
+  <div *ngIf="authService.isLoggedIn">
+    {{authService.user.username}}
+    <button mat-button (click)="authService.logout()">Logout</button>
+  </div>
+</mat-toolbar>

@@ -13,6 +13,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { IndexComponent } from './pages/index/index.component';
 import { UsersComponent } from './pages/users/users.component';
 import { CreateArticleComponent } from './pages/create-article/create-article.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateArticleComponent } from './pages/create-article/create-article.co
     LoginPageComponent,
     IndexComponent,
     UsersComponent,
-    CreateArticleComponent
+    CreateArticleComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

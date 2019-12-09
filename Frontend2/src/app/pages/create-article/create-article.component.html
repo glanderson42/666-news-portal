@@ -12,26 +12,19 @@
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input disabled matInput/>
-        {{userName}}
+        <input disabled matInput placeholder='{{userName.firstName}} {{userName.lastName}}'/>
       </mat-form-field>
     </div>
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="PostDate" formControlName="postDate" />
-        <mat-error *ngIf="postDate.hasError('required')">
-          PostDate is <strong>required</strong>
-        </mat-error>
+        <input disabled matInput placeholder={{today}}>
       </mat-form-field>
     </div>
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="ModifiedDate" formControlName="modifiedDate" />
-        <mat-error *ngIf="modifiedDate.hasError('required')">
-          ModifiedDate is <strong>required</strong>
-        </mat-error>
+        <input disabled matInput placeholder={{today}}>
       </mat-form-field>
     </div>
 
