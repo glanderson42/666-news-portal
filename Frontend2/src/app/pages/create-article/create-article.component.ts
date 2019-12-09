@@ -18,14 +18,23 @@ export class CreateArticleComponent implements OnInit {
     content: new FormControl('', [Validators.required]),
   });
 
-  newArticle: Article;
+  newArticle: Article = {
+    id: 0,
+    name: '',
+    user: null,
+    postDate: null,
+    modifiedDate: null,
+    summary: '',
+    content: ''
+  }
+  
   userName: User;
   today =  new Date(Date.now());
 
   constructor(
     private articleService: ArticleService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -35,6 +44,7 @@ export class CreateArticleComponent implements OnInit {
   }
 
   get name() {
+    console.log(this.articleForm.value.name);
     return this.articleForm.get('name');
   }
   get summary() {
@@ -45,12 +55,12 @@ export class CreateArticleComponent implements OnInit {
   }
 
   submit() {
-    this.newArticle.name = this.name.value;
+    this.newArticle.name = this.articleForm.value.name;
     this.newArticle.user = this.userName;
     this.newArticle.postDate = this.today;
     this.newArticle.modifiedDate = this.today;
-    this.newArticle.summary = this.summary.value;
-    this.newArticle.content = this.content.value;
+    this.newArticle.summary = this.articleForm.value.summary;
+    this.newArticle.content = this.articleForm.value.content;
 
     this.articleService.addArticle(this.newArticle)
     .then(
