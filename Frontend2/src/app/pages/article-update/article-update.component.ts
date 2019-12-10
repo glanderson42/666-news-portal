@@ -63,7 +63,7 @@ export class ArticleUpdateComponent implements OnInit {
     this.loadedArticle.summary = this.getSummary.value;
     this.loadedArticle.content = this.getContent.value;
 
-    this.articleService.updateArticle(this.loadedArticle, this.id)
+    this.articleService.updateArticle(this.id, this.loadedArticle)
     .then(
       err => console.log(err));
   }

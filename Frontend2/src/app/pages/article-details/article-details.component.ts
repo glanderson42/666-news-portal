@@ -10,8 +10,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./article-details.component.css']
 })
 export class ArticleDetailsComponent implements OnInit {
-  protected article: Article;
-
+  protected article: Article = {
+    id: 0,
+    name: '',
+    user: null,
+    postDate: null,
+    modifiedDate: null,
+    summary: '',
+    content: ''
+  };
   constructor(
     private route: ActivatedRoute,
     private articleService: ArticleService,
