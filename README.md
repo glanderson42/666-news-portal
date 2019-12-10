@@ -72,3 +72,42 @@ Spring boot, JPA, Hibernate, Boot-Security
 
 ## 6. Usercase diagram
 ![usercase](https://scontent-vie1-1.xx.fbcdn.net/v/t1.15752-9/74325794_954705488239525_4852537308961832960_n.png?_nc_cat=107&_nc_oc=AQlyZQ59KJ8bDkL4x9YFy8dnoBVv8zjVcONLY-QAFjI8rAv4gI2c_E2e9JS_ud7qFNoKs_HA2F60jRxI28X4OzM6&_nc_ht=scontent-vie1-1.xx&oh=dfbc72d6379956441bef53a5edd66d0f&oe=5E569A33)
+
+# Frontend
+## Technologiai stack
+Angular8, Angular material
+## Routes
+/ -> Index componentet jeleniti meg
+/users -> visszaadja a usereket, a UsersCOmponentet jeleniti meg
+/login -> bejelentkezes
+/createArticle -> cikk letrehozasa
+/article-details/:id -> articleDetails component, az adott id-vel rendelkezo cikket jeleniti meg
+/article-update/:id -> itt tudjuk modositani az adott cikket
+/register -> regisztracio
+
+## Funkciok
+A felhasznalo tud user-t regisztralni, cikket letrehozni, editalni, usereket hozzaadni, torolni, editalni. A cikkeknek megtudja tekinteni a reszletes nezetet.
+
+## Mappa struktura
+```
+Frontend
+-- e2e
+-- node_modules
+-- src
+    -- app
+        -- components
+            -- login-page
+            -- navbar
+        -- models
+        -- pages
+            -- article-details
+            -- article-update
+            -- create-article
+            -- index
+            -- user-create
+            -- users
+        -- services
+    -- assets
+    -- environments
+```
+
