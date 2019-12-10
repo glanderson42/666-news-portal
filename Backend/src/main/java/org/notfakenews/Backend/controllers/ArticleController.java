@@ -1,5 +1,6 @@
 package org.notfakenews.Backend.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.notfakenews.Backend.entities.Article;

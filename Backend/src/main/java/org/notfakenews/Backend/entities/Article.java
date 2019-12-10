@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Data
@@ -47,10 +48,10 @@ public class Article implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedDate;
     
-    @Column
+    @Column(length = 5000)
     private String summary;
     
-    @Column
+    @Column(length = 5000)
     private String content;
     
 }

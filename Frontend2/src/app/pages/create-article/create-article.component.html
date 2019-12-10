@@ -33,7 +33,7 @@
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Summary" formControlName="summary" />
+        <textarea matInput placeholder="Summary" formControlName="summary" cdkTextareaAutosize #autosize="cdkTextareaAutosize"></textarea>
         <mat-error *ngIf="getSummary.hasError('required')">
           Summary is <strong>required</strong>
         </mat-error>
@@ -42,7 +42,7 @@
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Content" formControlName="content" />
+        <textarea matInput placeholder="Content" formControlName="content" cdkTextareaAutosize #autosize="cdkTextareaAutosize"></textarea>
         <mat-error *ngIf="getContent.hasError('required')">
           Content is <strong>required</strong>
         </mat-error>
