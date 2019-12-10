@@ -9,11 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule, MatButtonModule, MatCardModule, MatGridListModule, MatListModule, MatTableModule, MatSelectModule, MatFormFieldModule, MatDatepickerModule, MatInputModule, MatNativeDateModule, MatIconModule } from '@angular/material';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 import { IndexComponent } from './pages/index/index.component';
 import { UsersComponent } from './pages/users/users.component';
 import { CreateArticleComponent } from './pages/create-article/create-article.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ArticleDetailsComponent } from './pages/article-details/article-details.component';
+import { ArticleUpdateComponent } from './pages/article-update/article-update.component';
+import { UserCreateComponent } from './pages/user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     IndexComponent,
     UsersComponent,
     CreateArticleComponent,
-    NavbarComponent
+    NavbarComponent,
+    ArticleDetailsComponent,
+    ArticleUpdateComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,18 @@ export class ArticleService {
   public async addArticle(article: Article) {
     try {
       await this.httpService.post<Article>(this.route, article);
-      this.router.navigate(['articles']);
+      this.router.navigate(['']);
     } catch (e) {}
+  }
+
+  public async updateArticle(id: number, article: Article) {
+    try {
+      await this.httpService.put<Article>(this.route + '/' + id, article);
+      this.router.navigate(['']);
+    } catch (e) {}
+  }
+
+  public deleteArticle(id: number): Promise<Article> {
+    return this.httpService.delete<Article>(this.route + '/' + id);
   }
 }

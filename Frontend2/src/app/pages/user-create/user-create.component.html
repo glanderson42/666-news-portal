@@ -1,0 +1,64 @@
+<div class="page-body">
+  <h2 class="mat-h2">New User</h2>
+  <form [formGroup]="userForm" novalidate>
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" formControlName="username" />
+        <mat-error *ngIf="getUsername.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" formControlName="password" [type]="hidePassword ? 'password' : 'text'"/>
+        <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="getPassword.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First name" formControlName="firstName" />
+        <mat-error *ngIf="getFirstName.hasError('required')">
+          First name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last name" formControlName="lastName" />
+        <mat-error *ngIf="getLastName.hasError('required')">
+          Last name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <!-- <input matInput placeholder="Role" formControlName="role" /> -->
+        <!-- <mat-select formControlName="role" placeholder="Role">
+          <mat-option *ngFor="let role of keys(roles)" [value]="role">
+            {{roles[role]}}
+          </mat-option>
+        </mat-select> -->
+
+      <mat-select formControlName="role" placeholder="Role" *ngIf="authService.isLoggedIn">
+        <mat-option  *ngFor="let role of keys(roles)" [value]="role">
+          {{roles[role]}}
+        </mat-option>
+        </mat-select>
+        <mat-error *ngIf="getRole.hasError('required')">
+          Role is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button class="mat-primary" (click)="submit()" [disabled]="!userForm.valid">Send</button>
+    <a mat-button class="mat-accent" routerLink="">Back</a>
+  </form>
+</div>

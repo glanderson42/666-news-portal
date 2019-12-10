@@ -1,9 +1,9 @@
 <div class="page-body">
-  <h2 class="mat-h2">New Article</h2>
+  <h2 class="mat-h2">Edit Article</h2>
   <form [formGroup]="articleForm" novalidate>
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Name" formControlName="name" />
+        <input matInput placeholder="Name" formControlName="name" value={{loadedArticle.name}}/>
         <mat-error *ngIf="getName.hasError('required')">
           Name is <strong>required</strong>
         </mat-error>
@@ -12,28 +12,28 @@
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input disabled matInput placeholder='User'/>
-        {{userName.firstName}} {{userName.lastName}}
+        <input disabled matInput placeholder="User"/>
+        {{loadedArticle.user.firstName}} {{loadedArticle.user.lastName}}
       </mat-form-field>
     </div>
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
         <input disabled matInput placeholder="Post date">
-        {{today | date: 'yyyy/MM/dd HH:mm' }}
+        {{loadedArticle.postDate | date: 'yyyy/MM/dd HH:mm' }}
       </mat-form-field>
     </div>
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input disabled matInput placeholder="Post date">
-        {{today | date: 'yyyy/MM/dd HH:mm' }}
+        <input disabled matInput placeholder="Modified date">
+        {{loadedArticle.modifiedDate | date: 'yyyy/MM/dd HH:mm' }}
       </mat-form-field>
     </div>
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Summary" formControlName="summary" />
+        <input matInput placeholder="Summary" formControlName="summary" value={{loadedArticle.summary}}/>
         <mat-error *ngIf="getSummary.hasError('required')">
           Summary is <strong>required</strong>
         </mat-error>
@@ -42,7 +42,7 @@
 
     <div class="form-control">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Content" formControlName="content" />
+        <input matInput placeholder="Content" formControlName="content" value={{loadedArticle.content}}/>
         <mat-error *ngIf="getContent.hasError('required')">
           Content is <strong>required</strong>
         </mat-error>
@@ -51,5 +51,5 @@
 
     <button mat-raised-button class="mat-primary" (click)="submit()" [disabled]="!articleForm.valid">Send</button>
     <a mat-button class="mat-accent" routerLink="">Back</a>
-    </form>
+  </form>
 </div>

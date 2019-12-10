@@ -52,7 +52,7 @@ public class UserController {
         }
         user.setId(null);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole(User.Role.ROLE_ADMIN);
+//        user.setRole(User.Role.ROLE_ADMIN);
         return ResponseEntity.ok(userRepository.save(user));
     }
         

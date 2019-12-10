@@ -26,8 +26,8 @@ export class CreateArticleComponent implements OnInit {
     modifiedDate: null,
     summary: '',
     content: ''
-  }
-  
+  };
+
   userName: User;
   today =  new Date(Date.now());
 
@@ -43,24 +43,23 @@ export class CreateArticleComponent implements OnInit {
     }
   }
 
-  get name() {
-    console.log(this.articleForm.value.name);
+  get getName() {
     return this.articleForm.get('name');
   }
-  get summary() {
+  get getSummary() {
     return this.articleForm.get('summary');
   }
-  get content() {
+  get getContent() {
     return this.articleForm.get('content');
   }
 
   submit() {
-    this.newArticle.name = this.articleForm.value.name;
+    this.newArticle.name = this.getName.value;
     this.newArticle.user = this.userName;
     this.newArticle.postDate = this.today;
     this.newArticle.modifiedDate = this.today;
-    this.newArticle.summary = this.articleForm.value.summary;
-    this.newArticle.content = this.articleForm.value.content;
+    this.newArticle.summary = this.getSummary.value;
+    this.newArticle.content = this.getContent.value;
 
     this.articleService.addArticle(this.newArticle)
     .then(

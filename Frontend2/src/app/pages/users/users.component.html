@@ -1,6 +1,6 @@
 <h2>Users</h2>
 
-<mat-grid-list cols="2" rowHeight="180">
+<!-- <mat-grid-list cols="2" rowHeight="180">
   <mat-grid-tile *ngFor="let user of users">
     <mat-card>
       <mat-card-title>
@@ -12,4 +12,14 @@
       </mat-card-title>
     </mat-card>
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
+
+<mat-list role="list" *ngFor="let user of users">
+  <mat-list-item role="listitem">ID: {{ user.id }}</mat-list-item>
+  <mat-list-item role="listitem">USERNAME: {{ user.username }}</mat-list-item>
+  <mat-list-item role="listitem">FIRST NAME: {{ user.firstName }}</mat-list-item>
+  <mat-list-item role="listitem">LAST NAME: {{ user.lastName }}</mat-list-item>
+  <mat-list-item role="listitem">ROLE: {{ user.role }}</mat-list-item>
+  <mat-list-item role="listitem">PASSWORD: {{ user.password }}</mat-list-item>
+  <button mat-button *ngIf="authService.isLoggedIn" (click)="delete(user.id)">DELETE</button>
+</mat-list>
