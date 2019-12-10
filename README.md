@@ -77,6 +77,7 @@ Spring boot, JPA, Hibernate, Boot-Security
 ## Technologiai stack
 Angular8, Angular material
 ## Routes
+```
 / -> Index componentet jeleniti meg
 /users -> visszaadja a usereket, a UsersCOmponentet jeleniti meg
 /login -> bejelentkezes
@@ -84,6 +85,7 @@ Angular8, Angular material
 /article-details/:id -> articleDetails component, az adott id-vel rendelkezo cikket jeleniti meg
 /article-update/:id -> itt tudjuk modositani az adott cikket
 /register -> regisztracio
+```
 
 ## Funkciok
 A felhasznalo tud user-t regisztralni, cikket letrehozni, editalni, usereket hozzaadni, torolni, editalni. A cikkeknek megtudja tekinteni a reszletes nezetet.
