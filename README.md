@@ -1,21 +1,17 @@
 # 666 Hírportál
 ## 0.1 Bevezeto
 (Vass Mark Benjamin - I8WZ8L, Garai Adam - G21IQ5)
-- A  főoldalon  megjelennek  a  legfrissebb  hírek  (cím és  összefoglaló,dátum szerint csökkenő sorrendben, legfeljebb 10), illetve a lap tetején kiemelten a vezető cikk (cím és összefoglaló) képpel (amennyiben több kép tartozik a cikkhez, az első jelenik meg, kicsinyített méretben).
+- A  főoldalon  megjelennek  a  legfrissebb  hírek  (cím, összefoglaló, szerző, létrehozás dátuma).
 
 - A címet kiválasztva megjelenik  a  teljes  tartalom(beleértve a szerző nevét, illetve a bevitel, vagy utolsó módosítás dátumát)képpel (ha van kép a cikkhez rendelve).
 
-- A  hírportál  tartalmaz  egy  archívumot,  ahol  dátum  szerint  csökkenő sorrendben listázódnak a hírek (cím és összefoglaló). Egy  oldalon  legfeljebb 20hírt láthatunk, a többiért lapozni kell. Az archívumban lehet keresni is, megadott dátumra, cím(részlet)re, vagy tetszőleges szóra a cikk tartalmából.
-
 - A  program  használatához  először  be  kell  jelentkeznie  a  munkatársnak  a felhasználónév és a jelszó megadásával. Ezt követően válnak elérhetővé a szerkesztési funkciók (illetve a kijelentkezés)
-
-- A főablakban a saját cikkek listázódnak dátum szerint (cím, író, dátum), amelyeket módosíthatunk, illetve törölhetünk is.
 
 - Új cikk felvitelénél meg kell adnunk a címet, az összefoglalót (max.  1000 karakter),  valamint  a  teljes  szöveget.  Ezek  kitöltése  kötelező.  A  cikk beállítható vezető  cikknek,  ekkor  azonban  kötelező  legalább  egy  képet feltölteni hozzá. Ezen felül feltölthetnek tetszőleges számú képet a cikkhez.
 
 - Cikk módosításánál is ugyanezta felületet kapjuk vissza, de már előre kitöltve.
 
-- Cikk törlésénél a program megerősítést kér a felhasználótól.
+- Cikk törlésénél a cikk törlődik.
 
 Az adatbázis az alábbi adatokat tárolja: 
 - User(id, username, password, firstName, lastName, lastLogin, role, articles)
@@ -72,3 +68,44 @@ Spring boot, JPA, Hibernate, Boot-Security
 
 ## 6. Usercase diagram
 ![usercase](https://scontent-vie1-1.xx.fbcdn.net/v/t1.15752-9/74325794_954705488239525_4852537308961832960_n.png?_nc_cat=107&_nc_oc=AQlyZQ59KJ8bDkL4x9YFy8dnoBVv8zjVcONLY-QAFjI8rAv4gI2c_E2e9JS_ud7qFNoKs_HA2F60jRxI28X4OzM6&_nc_ht=scontent-vie1-1.xx&oh=dfbc72d6379956441bef53a5edd66d0f&oe=5E569A33)
+
+# Frontend
+## Technologiai stack
+Angular8, Angular material
+## Routes
+```
+/ -> Index componentet jeleniti meg
+/users -> visszaadja a usereket, a UsersCOmponentet jeleniti meg
+/login -> bejelentkezes
+/createArticle -> cikk letrehozasa
+/article-details/:id -> articleDetails component, az adott id-vel rendelkezo cikket jeleniti meg
+/article-update/:id -> itt tudjuk modositani az adott cikket
+/register -> regisztracio
+```
+
+## Funkciok
+A felhasznalo tud user-t regisztralni, cikket letrehozni, editalni, usereket hozzaadni, torolni, editalni. A cikkeknek megtudja tekinteni a reszletes nezetet.
+
+## Mappa struktura
+```
+Frontend
+-- e2e
+-- node_modules
+-- src
+    -- app
+        -- components
+            -- login-page
+            -- navbar
+        -- models
+        -- pages
+            -- article-details
+            -- article-update
+            -- create-article
+            -- index
+            -- user-create
+            -- users
+        -- services
+    -- assets
+    -- environments
+```
+
